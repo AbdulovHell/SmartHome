@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source">
+      <UniqueIdentifier>{188dfdb0-0a52-4664-98d1-7fa3cc483967}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header">
+      <UniqueIdentifier>{97c2fd87-56fc-4cf7-9b32-03a9269242c8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header\Data Interface">
+      <UniqueIdentifier>{7fdfa580-46f9-42ca-ab73-31b8ad34bed2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Data Interface">
+      <UniqueIdentifier>{d25bec1b-2cd6-48a9-82f4-3be350c4e1bd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header\Sys">
+      <UniqueIdentifier>{153cb8b7-e311-43b2-b592-1a1a4476d7e7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Sys">
+      <UniqueIdentifier>{126d6c8c-2a48-4fb7-9f87-253a8d367dab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header\Sensors">
+      <UniqueIdentifier>{72421b1c-86f4-4e0a-89d2-fcd1f1ef1606}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Sensors">
+      <UniqueIdentifier>{595ffc39-e458-4f9d-8bfc-9599e5a7a757}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="threading.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="I2C.cpp">
+      <Filter>Source\Data Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="SPI.cpp">
+      <Filter>Source\Data Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="Colorize.cpp">
+      <Filter>Source\Sys</Filter>
+    </ClCompile>
+    <ClCompile Include="stuff.cpp">
+      <Filter>Source\Sys</Filter>
+    </ClCompile>
+    <ClCompile Include="DHT22.cpp">
+      <Filter>Source\Sensors</Filter>
+    </ClCompile>
+    <ClCompile Include="LightSensor.cpp">
+      <Filter>Source\Sensors</Filter>
+    </ClCompile>
+    <ClCompile Include="SoundSensor.cpp">
+      <Filter>Source\Sensors</Filter>
+    </ClCompile>
+    <ClCompile Include="SQLTX.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="MovingSensor.cpp">
+      <Filter>Source\Sensors</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="sys_headers.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="main.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="threading.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="I2C.h">
+      <Filter>Header\Data Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="SPI.h">
+      <Filter>Header\Data Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="Colorize.h">
+      <Filter>Header\Sys</Filter>
+    </ClInclude>
+    <ClInclude Include="stuff.h">
+      <Filter>Header\Sys</Filter>
+    </ClInclude>
+    <ClInclude Include="DHT22.h">
+      <Filter>Header\Sensors</Filter>
+    </ClInclude>
+    <ClInclude Include="LightSensor.h">
+      <Filter>Header\Sensors</Filter>
+    </ClInclude>
+    <ClInclude Include="SoundSensor.h">
+      <Filter>Header\Sensors</Filter>
+    </ClInclude>
+    <ClInclude Include="SQLTX.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="MovingSensor.h">
+      <Filter>Header\Sensors</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

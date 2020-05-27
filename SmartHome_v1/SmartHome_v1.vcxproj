@@ -77,6 +77,7 @@
     </RemotePostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BMP280.cpp" />
     <ClCompile Include="Colorize.cpp" />
     <ClCompile Include="DHT22.cpp" />
     <ClCompile Include="I2C.cpp" />
@@ -90,6 +91,7 @@
     <ClCompile Include="threading.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BMP280.h" />
     <ClInclude Include="Colorize.h" />
     <ClInclude Include="DHT22.h" />
     <ClInclude Include="I2C.h" />

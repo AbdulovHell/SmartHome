@@ -9,10 +9,7 @@
 using namespace Threading;
 using namespace Stuff;
 
-//TODO: Датчик оcвещения
-//TODO: Датчик движения
-//TODO: Датчик влажности и температуры
-//TODO: Датчик звука
+//TODO: Датчик звука, настроили чувствительность и убрали повторные срабатывания, посмотрим
 
 namespace Threading {
 	bool Working = true;

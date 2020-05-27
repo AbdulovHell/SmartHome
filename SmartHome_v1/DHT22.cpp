@@ -9,7 +9,7 @@ using namespace std;
 
 namespace DHT22 {
 
-	int _pin;
+	int _pin;	
 	uint8_t data[5];
 	uint32_t tick_start;
 	int waits;
@@ -71,13 +71,15 @@ namespace DHT22 {
 		}
 		_cycles[0] = _cycles[0] - tick_start;
 
-	    /*for (int i = 0; i < _cycles_count; i++)
-		WriteLog("DHT", ToStr(_cycles[i]), Stuff::Yellow);*/
+		/*for (int i = 0; i < _cycles_count; i++) {
+			WriteLog("DHT", "c[" + ToStr(i) + "]=" + ToStr(_cycles[i]), Stuff::Yellow);
+		}*/
 
 		uint32_t pairs[80];
 		int offset = _cycles_count - (1 + 80);
 		//WriteLog("DHT", "Offset: "+ToStr(offset), Stuff::Yellow);
 		memcpy(pairs,(_cycles+offset), sizeof(uint32_t) * 80);
+		//WriteLog("DHT","Last two cycles: "+ToStr(_cycles[_cycles_count-2])+" "+ToStr(_cycles[_cycles_count - 1]),Stuff::Yellow);
 
 		for (int i = 0; i < 40; i++) {
 			uint32_t clk = pairs[2 * i];
@@ -93,11 +95,11 @@ namespace DHT22 {
 		
 		// Checksum
 		if (data[4] == ((data[0] + data[1] + data[2] + data[3]) & 0xFF)) {
-			//WriteLog("DHT", "Read() completed", Stuff::Yellow);
+			WriteLog("DHT", "Read() completed", Stuff::Yellow);
 			return true;
 		}
 		else {
-			//WriteLog("DHT", "Checksum error", Stuff::Yellow);
+			WriteLog("DHT", "Checksum error", Stuff::Yellow);
 			return false;
 		}
 		//À

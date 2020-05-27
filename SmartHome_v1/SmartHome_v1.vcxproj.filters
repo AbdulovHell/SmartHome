@@ -60,6 +60,9 @@
     <ClCompile Include="MovingSensor.cpp">
       <Filter>Source\Sensors</Filter>
     </ClCompile>
+    <ClCompile Include="BMP280.cpp">
+      <Filter>Source\Sensors</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="sys_headers.h">
@@ -96,6 +99,9 @@
       <Filter>Header</Filter>
     </ClInclude>
     <ClInclude Include="MovingSensor.h">
+      <Filter>Header\Sensors</Filter>
+    </ClInclude>
+    <ClInclude Include="BMP280.h">
       <Filter>Header\Sensors</Filter>
     </ClInclude>
   </ItemGroup>

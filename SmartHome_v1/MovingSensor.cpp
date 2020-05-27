@@ -15,6 +15,7 @@ namespace MovingSensor {
 	void React(int gpio, int level, uint32_t tick)
 	{
 		if (gpio == _pin && level == 1) {
+			WriteLog("MS","Act",Stuff::Blue);
 			SendInfo(make_unique<MovingInfo>(1));
 		}
 	}
@@ -22,6 +23,9 @@ namespace MovingSensor {
 	void MSenseInit(int pin)
 	{
 		_pin = pin;
+		gpioSetMode(_pin, PI_INPUT);
+		gpioSetPullUpDown(_pin, PI_PUD_DOWN);
+		this_thread::sleep_for(chrono::milliseconds(20));
 		gpioSetAlertFunc(_pin, React);
 	}
 

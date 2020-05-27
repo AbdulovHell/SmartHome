@@ -20,19 +20,19 @@ namespace Threading {
 	SoundInfo::SoundInfo(int a) {
 		Act = a;
 	}
-	void SoundInfo::Send() {
+	int SoundInfo::Send() {
 		char buf[200];
 		sprintf(buf, "INSERT INTO Sound (Activity) VALUES (%d);", Act);
-		mysql_query(hDB, buf);
+		return mysql_query(hDB, buf);
 	}
 
 	MovingInfo::MovingInfo(int a) {
 		Act = a;
 	}
-	void MovingInfo::Send() {
+	int MovingInfo::Send() {
 		char buf[200];
 		sprintf(buf, "INSERT INTO Moving (Activity) VALUES (%d);", Act);
-		mysql_query(hDB, buf);
+		return mysql_query(hDB, buf);
 	}
 
 	MeasInfo::MeasInfo(float temp, float hum, float light, float press) {
@@ -41,10 +41,10 @@ namespace Threading {
 		_light = light;
 		_press = press;
 	}
-	void MeasInfo::Send() {
+	int MeasInfo::Send() {
 		char buf[200];
-		sprintf(buf, "INSERT INTO Measures (Temperature, Humidity, LightLvl) VALUES (%.2f,%.2f,%.2f);", _temp, _hum, _light);
-		mysql_query(hDB, buf);
+		sprintf(buf, "INSERT INTO Measures (Temperature, Humidity,Pressure, LightLvl) VALUES (%.2f,%.2f,%.2f,%.2f);", _temp, _hum,_press, _light);
+		return mysql_query(hDB, buf);
 	}
 
 	void SendInfo(unique_ptr<Info> inf)
@@ -72,7 +72,8 @@ namespace Threading {
 				unique_ptr<Info> temp = move(InfoToSend[0]);
 				InfoToSend.erase(InfoToSend.begin());
 				SendInfoMutex->unlock();
-				temp->Send();
+				int res=temp->Send();
+				if(res!=0) WriteLog("SQLThread", "mysql_query() error", Stuff::Red);
 			}
 			else
 				SendInfoMutex->unlock();

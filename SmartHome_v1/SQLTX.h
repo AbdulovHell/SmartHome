@@ -9,7 +9,7 @@ namespace Threading {
 	class Info {
 
 	public:
-		virtual void Send() = 0;
+		virtual int Send() = 0;
 	};
 
 	class SoundInfo : virtual public Info {
@@ -18,7 +18,7 @@ namespace Threading {
 	public:
 		SoundInfo(int a);
 
-		void Send();
+		int Send();
 	};
 
 	class MovingInfo : virtual public Info {
@@ -26,7 +26,7 @@ namespace Threading {
 	public:
 		MovingInfo(int a);
 
-		void Send();
+		int Send();
 	};
 
 	class MeasInfo : virtual public Info {
@@ -34,7 +34,7 @@ namespace Threading {
 	public:
 		MeasInfo(float temp, float hum, float light, float press);
 
-		void Send();
+		int Send();
 	};
 
 	void SendInfo(unique_ptr<Info> inf);

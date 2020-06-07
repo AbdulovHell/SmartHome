@@ -80,8 +80,8 @@ void * Threading::TimingThread::Timing(void * ptr_null)
 			}
 		}
 		if (cnt % 60 == 0) {	//60 min
-			SendInfo(make_unique<SoundInfo>(SoundSensor::GetState()));
-			SendInfo(make_unique<MovingInfo>(MovingSensor::GetState()));
+			SendInfo(make_unique<SoundInfo>(0));
+			SendInfo(make_unique<MovingInfo>(0));
 			cnt = 0;
 		}
 		this_thread::sleep_for(std::chrono::minutes(1));
